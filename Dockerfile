@@ -19,9 +19,9 @@ RUN apt-get update \
 
 RUN apt-get -y install python-pip libssl-dev libsasl2-dev ipython
 
-#RUN R -e "install.packages(c('rmongodb', 'rvest', 'jsonlite', 'curl', 'rAltmetric', 'XML', 'RISmed', 'mongolite', 'simpleRCache', 'plumber'), repos='http://cran.rstudio.com/')"
-
 RUN pip install selenium
 RUN pip install pymongo
+
+RUN R -e "install.packages(c('rmongodb', 'rvest', 'jsonlite', 'curl', 'rAltmetric', 'XML', 'RISmed', 'mongolite', 'simpleRCache', 'plumber'), repos='http://cran.rstudio.com/')"
 
 #CMD Rscript -e 'setwd('/workspace'); source('script.R')'
